@@ -222,3 +222,5 @@ def work(dir):
 
 work("train")
 work("test")
+
+print("PCRA DONE!")

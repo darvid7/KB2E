@@ -76,6 +76,10 @@ dict of {
 num = 0
 step = 0
 
+# TODO: Check relation_id is string when it is meant to be and int when it is meant to be.
+# If the outputs are all the same then it should be fine!
+# do a diff when they finish.
+# PCRA ~ 30 mins.
 
 with open("data/train.txt", "r") as train_fh:
     """ Format of a single line in train.txt is 
@@ -328,7 +332,7 @@ with open("data/confidence.better.txt", "w") as confidence_fh:
             if rel_path in path_dict and rel_path + "->" + str(relation_id) in path_r_dict:
                 # I think this is a ratio of value of this path divided by the total number of paths.
                 # TODO: I actually have no idea.
-                resource_flow = path_r_dict[rel_path + "->" + relation_id] * 1.0 / path_dict[rel_path]
+                resource_flow = path_r_dict[rel_path + "->" + str(relation_id)] * 1.0 / path_dict[rel_path]
                 write_this = " %s %s" % (relation_id, resource_flow)
                 out.append(write_this)
 
@@ -377,6 +381,22 @@ def work(test_or_train):
                 b[rel_path] /= sum  # Gives a % out of 100 for the relevance of this path.
                 if b[rel_path] > 0.01:  # Take paths that meet the threshold.
                     a[rel_path] = b[rel_path]
+        """ I think the next part writes out the things we are about from (e1, e2, rel_id) from the training/test set.
+        Two lines are outputted per triple. 
+        The first line (written above) contains e1, e2, rel_id.
+        The second line has the number of relation paths are care about (2).
+        
+        Each followed by the number of relations on this relation path, the actual relations and the confidence level.
+        
+        I've added brackets aroudn them to make it easier to see.
+        
+        /m/06v8s0 /m/017dcd 1664
+        2 (1 [1664] 0.496499573666) (1 [241] 0.496499573666)
+        
+        /m/0cnk2q /m/02nzb8 381
+        28 (2 [8 913] 0.0118208854406) (2 [2142 38] 0.0118208854406_ ...
+        
+        """
         write_out_pra_fh.write(str(len(a)))  # Writes out the number of relation paths we care about.
         for rel_path in a:
             write_out_pra_fh.write(" " + str(len(rel_path.split())) + " " + rel_path + " " + str(a[rel_path]))
@@ -408,3 +428,5 @@ def work(test_or_train):
 
 work("train")
 work("test")
+
+print("PCRA BETTER DONE!")
