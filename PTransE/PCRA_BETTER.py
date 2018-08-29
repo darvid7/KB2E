@@ -220,7 +220,7 @@ with open("data/path2.better.txt", "w") as path2_fh:  # I don't actually see whe
 
     for e1 in all_entities:  # Loop over all head entities.
         step += 1
-        print step
+        print step,
 
         # Paths of length 2 entities.
         for relation_id in all_entities[e1]:  # Loop over all outgoing relations from head entity.
