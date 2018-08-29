@@ -195,7 +195,7 @@ path_r_dict = {}
 }
 """
 
-with open("data/path2.txt", "w") as path2_fh:  # I don't actually see where path2.txt is used in PTransE.
+with open("data/path2.better.txt", "w") as path2_fh:  # I don't actually see where path2.txt is used in PTransE.
     step = 0
     start_time = time.time()
     path_num = 0
@@ -317,7 +317,7 @@ print
 # TODO: Since the reverse relations are never captured, relation_num will be in the 1000s, this might effect below
 # as we iterate through all relation nums
 
-with open("data/confidence.txt", "w") as confidence_fh:
+with open("data/confidence.better.txt", "w") as confidence_fh:
     for rel_path in train_path:
         out = []
         for relation_id in range(0, relation_num):
@@ -353,7 +353,7 @@ def work(test_or_train):
     # Contains triples:
     # /m/01qscs	/m/02x8n1n	/award/award_nominee/award_nominations./award/award_nomination/award
 
-    write_out_pra_fh = open("data/" + test_or_train + "_pra.txt", "w")
+    write_out_pra_fh = open("data/" + test_or_train + "_pra.better.txt", "w")
 
     for line in data_set_fh:
         seg = line.strip().split()
