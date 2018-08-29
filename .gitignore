@@ -16,6 +16,9 @@ PTransE/data/train_pra.txt.zip
 PTransE/data/confidence.txt
 PTransE/data/test_pra.txt
 PTransE/data/path2.txt
+PTransE/doc2vec_transformation/paths_from_pcra_train.log
+
+PTransE/PTransE_add/*
 
 PTransE/PTransE_add/Test_TransE_path
 PTransE/PTransE_add/Train_TransE_path

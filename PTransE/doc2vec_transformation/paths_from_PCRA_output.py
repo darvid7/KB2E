@@ -1,11 +1,17 @@
 import os
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-p", "--path")
+parser = parser.parse_args()
 
 print(os.getcwd())
-PCRA_OUTPUT_PATH = "../data/train_pra.txt"
+# PCRA_OUTPUT_PATH = "../data/train_pra_sample_1000_lines.txt"
 
 paths = []
 
-with open(PCRA_OUTPUT_PATH, "r") as fh:
+with open(parser.path, "r") as fh:
     header_toggle = True
     for line in fh:
         line = line.split()
