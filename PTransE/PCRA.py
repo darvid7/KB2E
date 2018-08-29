@@ -81,7 +81,7 @@ for line in f:
     ok[seg[1] + " " + seg[0]] = {}
 f.close()
 
-g = open("data/path2.txt", "w")
+g = open("data/path2.og.txt", "w")
 
 path_dict = {}
 path_r_dict = {}
@@ -158,7 +158,7 @@ for e1 in a:
     sys.stdout.flush()
 g.close()
 
-g = open("data/confidence.txt", "w")
+g = open("data/confidence.og.txt", "w")
 for rel_path in train_path:
 
     out = []
@@ -176,7 +176,7 @@ g.close()
 
 def work(dir):
     f = open("data/" + dir + ".txt", "r")
-    g = open("data/" + dir + "_pra.txt", "w")
+    g = open("data/" + dir + "_pra.og.txt", "w")
     for line in f:
         seg = line.strip().split()
         e1 = seg[0]
