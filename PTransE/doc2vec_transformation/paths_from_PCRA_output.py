@@ -1,7 +1,7 @@
 import os
 
 print(os.getcwd())
-PCRA_OUTPUT_PATH = "../data/train_pra_sample_1000_lines.txt"
+PCRA_OUTPUT_PATH = "../data/train_pra.txt"
 
 paths = []
 
