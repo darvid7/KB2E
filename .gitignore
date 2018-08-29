@@ -1,0 +1,9 @@
+PTransE/PTransE_add/Test_TransE_path
+PTransE/PTransE_add/Train_TransE_path
+PTransE/data/e1_e2.txt
+.idea
+*/.idea
+*.idea
+*.DS_Store
+*/.DS_Store
+.DS_Store
