@@ -480,7 +480,7 @@ void prepare()
 		id2relation[x]=st;
 		relation_num++;
 	}
-    FILE* f_kb = fopen("../data/test_pra_3.txt","r");
+    FILE* f_kb = fopen("../data/test_pra.txt","r");
 	while (fscanf(f_kb,"%s",buf)==1)
     {
         string s1=buf;
@@ -522,7 +522,7 @@ void prepare()
     }
     fclose(f_kb);
 	cout<<415<<endl;
-    FILE* f_path = fopen("../data/path.txt","r");
+    FILE* f_path = fopen("../data/path2.txt","r");
 	while (fscanf(f_path,"%s",buf)==1)
     {
         string s1=buf;
